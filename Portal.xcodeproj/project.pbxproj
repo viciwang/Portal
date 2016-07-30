@@ -10,13 +10,11 @@
 		0CFAE7D4620359B0A401582C /* Pods_PortalTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB6AD0E80970FB16CE315E41 /* Pods_PortalTests.framework */; };
 		453CFBDED542C343FFAD3D63 /* Pods_PortalUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E32A3E4D2B3256D3F06F23AB /* Pods_PortalUITests.framework */; };
 		7B6379AC9A90ADD091C02B2D /* Pods_Portal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF5A5D27754F4D34CA6A6C3A /* Pods_Portal.framework */; };
-		9F45E17C1D388ABA003DECDF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F45E17B1D388ABA003DECDF /* AppDelegate.swift */; };
-		9F45E17E1D388ABA003DECDF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F45E17D1D388ABA003DECDF /* ViewController.swift */; };
-		9F45E1811D388ABA003DECDF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F45E17F1D388ABA003DECDF /* Main.storyboard */; };
-		9F45E1831D388ABA003DECDF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F45E1821D388ABA003DECDF /* Assets.xcassets */; };
-		9F45E1861D388ABA003DECDF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F45E1841D388ABA003DECDF /* LaunchScreen.storyboard */; };
 		9F45E1911D388ABA003DECDF /* PortalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F45E1901D388ABA003DECDF /* PortalTests.swift */; };
 		9F45E19C1D388ABA003DECDF /* PortalUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F45E19B1D388ABA003DECDF /* PortalUITests.swift */; };
+		9F55B6381D4CFB0100F1C573 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F55B6321D4CFB0100F1C573 /* Assets.xcassets */; };
+		9F55B6391D4CFB0100F1C573 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F55B6341D4CFB0100F1C573 /* AppDelegate.swift */; };
+		9F55B63A1D4CFB0100F1C573 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F55B6351D4CFB0100F1C573 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,18 +40,16 @@
 		3CC038D04356E4D91E56DA78 /* Pods-Portal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Portal.release.xcconfig"; path = "Pods/Target Support Files/Pods-Portal/Pods-Portal.release.xcconfig"; sourceTree = "<group>"; };
 		999882C20DCE9EF77391160C /* Pods-PortalTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PortalTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PortalTests/Pods-PortalTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9F45E1781D388ABA003DECDF /* Portal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Portal.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		9F45E17B1D388ABA003DECDF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9F45E17D1D388ABA003DECDF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		9F45E1801D388ABA003DECDF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		9F45E1821D388ABA003DECDF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		9F45E1851D388ABA003DECDF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		9F45E1871D388ABA003DECDF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9F45E18C1D388ABA003DECDF /* PortalTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PortalTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F45E1901D388ABA003DECDF /* PortalTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortalTests.swift; sourceTree = "<group>"; };
 		9F45E1921D388ABA003DECDF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9F45E1971D388ABA003DECDF /* PortalUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PortalUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F45E19B1D388ABA003DECDF /* PortalUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortalUITests.swift; sourceTree = "<group>"; };
 		9F45E19D1D388ABA003DECDF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9F55B6321D4CFB0100F1C573 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9F55B6341D4CFB0100F1C573 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		9F55B6361D4CFB0100F1C573 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9F55B6371D4CFB0100F1C573 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AF53E2C866840CDCEAE55F4B /* Pods-PortalUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PortalUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PortalUITests/Pods-PortalUITests.release.xcconfig"; sourceTree = "<group>"; };
 		DE45ED37E4A9B418C74DDAF0 /* Pods-PortalTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PortalTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PortalTests/Pods-PortalTests.release.xcconfig"; sourceTree = "<group>"; };
 		E32A3E4D2B3256D3F06F23AB /* Pods_PortalUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PortalUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -137,12 +133,9 @@
 		9F45E17A1D388ABA003DECDF /* Portal */ = {
 			isa = PBXGroup;
 			children = (
-				9F45E17B1D388ABA003DECDF /* AppDelegate.swift */,
-				9F45E17D1D388ABA003DECDF /* ViewController.swift */,
-				9F45E17F1D388ABA003DECDF /* Main.storyboard */,
-				9F45E1821D388ABA003DECDF /* Assets.xcassets */,
-				9F45E1841D388ABA003DECDF /* LaunchScreen.storyboard */,
-				9F45E1871D388ABA003DECDF /* Info.plist */,
+				9F55B63C1D4CFB2200F1C573 /* Modules */,
+				9F55B6311D4CFB0100F1C573 /* Resources */,
+				9F55B6331D4CFB0100F1C573 /* SupportFiles */,
 			);
 			path = Portal;
 			sourceTree = "<group>";
@@ -163,6 +156,31 @@
 				9F45E19D1D388ABA003DECDF /* Info.plist */,
 			);
 			path = PortalUITests;
+			sourceTree = "<group>";
+		};
+		9F55B6311D4CFB0100F1C573 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9F55B6321D4CFB0100F1C573 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		9F55B6331D4CFB0100F1C573 /* SupportFiles */ = {
+			isa = PBXGroup;
+			children = (
+				9F55B6341D4CFB0100F1C573 /* AppDelegate.swift */,
+				9F55B6351D4CFB0100F1C573 /* LaunchScreen.storyboard */,
+				9F55B6371D4CFB0100F1C573 /* Info.plist */,
+			);
+			path = SupportFiles;
+			sourceTree = "<group>";
+		};
+		9F55B63C1D4CFB2200F1C573 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Modules;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -241,6 +259,7 @@
 				TargetAttributes = {
 					9F45E1771D388ABA003DECDF = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = JX5LFX27DB;
 					};
 					9F45E18B1D388ABA003DECDF = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -277,9 +296,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9F45E1861D388ABA003DECDF /* LaunchScreen.storyboard in Resources */,
-				9F45E1831D388ABA003DECDF /* Assets.xcassets in Resources */,
-				9F45E1811D388ABA003DECDF /* Main.storyboard in Resources */,
+				9F55B6381D4CFB0100F1C573 /* Assets.xcassets in Resources */,
+				9F55B63A1D4CFB0100F1C573 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -427,8 +445,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9F45E17E1D388ABA003DECDF /* ViewController.swift in Sources */,
-				9F45E17C1D388ABA003DECDF /* AppDelegate.swift in Sources */,
+				9F55B6391D4CFB0100F1C573 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -464,18 +481,10 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		9F45E17F1D388ABA003DECDF /* Main.storyboard */ = {
+		9F55B6351D4CFB0100F1C573 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				9F45E1801D388ABA003DECDF /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		9F45E1841D388ABA003DECDF /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				9F45E1851D388ABA003DECDF /* Base */,
+				9F55B6361D4CFB0100F1C573 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -571,10 +580,13 @@
 			baseConfigurationReference = 20266D7A7536289448EB66B8 /* Pods-Portal.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = Portal/Info.plist;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = "$(SRCROOT)/Portal/SupportFiles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.allen.Portal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -583,10 +595,13 @@
 			baseConfigurationReference = 3CC038D04356E4D91E56DA78 /* Pods-Portal.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = Portal/Info.plist;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = "$(SRCROOT)/Portal/SupportFiles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.allen.Portal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

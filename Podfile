@@ -6,8 +6,12 @@ target 'Portal' do
   use_frameworks!
 
   # Pods for Portal
-  
+
   pod 'GCDWebServer', '~> 3.3.2'
+  pod 'GCDWebServer/WebUploader', '~> 3.3.2'
+  pod 'GCDWebServer/WebDAV', '~> 3.3.2'
+  pod 'Masonry', '~> 1.0.1'
+  pod 'ReactiveCocoa', '~> 4.2.1'
 
   target 'PortalTests' do
     inherit! :search_paths
