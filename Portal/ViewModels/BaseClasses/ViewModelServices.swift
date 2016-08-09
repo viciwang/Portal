@@ -7,23 +7,106 @@
 //
 
 import UIKit
+import ReactiveCocoa
+import Result
+
+public struct ViewModelNavigationParams {
+    var viewModel: ViewModel?
+    var animated = true
+    var completion: (() -> Void)?
+    
+    init(viewModel: ViewModel? , animated: Bool = true, completion: (()-> Void)? = nil) {
+        self.viewModel = viewModel
+        self.animated = animated
+        self.completion = completion
+    }
+}
+
+typealias NavigationSignal = Signal<ViewModelNavigationParams, NoError>
+typealias NavigationObserver = Observer<ViewModelNavigationParams, NoError>
 
 protocol ViewModelServicesProtocal: NavigationProtocal {
+    
+    var pushViewModelSignal: NavigationSignal {get}
+    
+    var popViewModelSignal: NavigationSignal {get}
+    
+    var popToRootViewModelSignal: NavigationSignal {get}
+    
+    var presentViewModelSignal: NavigationSignal {get}
+    
+    var dismissViewModelSignal: NavigationSignal {get}
+    
+    var resetRootViewModel: NavigationSignal {get}
     
 }
 
 class ViewModelServices: NSObject, ViewModelServicesProtocal {
     
-    func pushViewModel(viewModel: ViewModel, animated: Bool) {}
+    typealias NavigationSignalPipe = (NavigationSignal, NavigationObserver)
     
-    func popViewModelAnimated(animated: Bool) {}
+    private let pushSignalPipe: NavigationSignalPipe
+    private let popSignalPipe: NavigationSignalPipe
+    private let popToRootSignalPipe: NavigationSignalPipe
+    private let presentSignalPipe: NavigationSignalPipe
+    private let dismissSignalPipe: NavigationSignalPipe
+    private let resetRootSignalPipe: NavigationSignalPipe
     
-    func popToRootViewModelAnimated(animated: Bool) {}
+    var pushViewModelSignal: NavigationSignal {
+        return pushSignalPipe.0
+    }
     
-    func presentViewModel(viewModel: ViewModel, animated: Bool, completion: () -> Void) {}
+    var popViewModelSignal: NavigationSignal {
+        return popSignalPipe.0
+    }
     
-    func dismissViewModelAnimated(animated: Bool, completion: () -> Void) {}
+    var popToRootViewModelSignal: NavigationSignal {
+        return popToRootSignalPipe.0
+    }
     
-    func resetRootViewModel(viewModel: ViewModel) {}
+    var presentViewModelSignal: NavigationSignal {
+        return presentSignalPipe.0
+    }
+    
+    var dismissViewModelSignal: NavigationSignal {
+        return dismissSignalPipe.0
+    }
+    
+    var resetRootViewModel: NavigationSignal {
+        return resetRootSignalPipe.0
+    }
+    
+    override init() {
+        pushSignalPipe = Signal.pipe()
+        popSignalPipe = Signal.pipe()
+        popToRootSignalPipe = Signal.pipe()
+        presentSignalPipe = Signal.pipe()
+        dismissSignalPipe = Signal.pipe()
+        resetRootSignalPipe = Signal.pipe()
+    }
+    
+    func pushViewModel(viewModel: ViewModel, animated: Bool) {
+        pushSignalPipe.1.sendNext(ViewModelNavigationParams(viewModel: viewModel, animated: animated))
+    }
+    
+    func popViewModelAnimated(animated: Bool) {
+        popSignalPipe.1.sendNext(ViewModelNavigationParams(viewModel: nil, animated: animated))
+    }
+    
+    func popToRootViewModelAnimated(animated: Bool) {
+        popToRootSignalPipe.1.sendNext(ViewModelNavigationParams(viewModel: nil, animated: animated))
+    }
+    
+    func presentViewModel(viewModel: ViewModel, animated: Bool, completion: (() -> Void)?) {
+        presentSignalPipe.1.sendNext(ViewModelNavigationParams(viewModel: viewModel, animated: animated, completion: completion))
+    }
+    
+    func dismissViewModelAnimated(animated: Bool, completion: (() -> Void)?) {
+        dismissSignalPipe.1.sendNext(ViewModelNavigationParams(viewModel: nil, animated: animated, completion: completion))
+    }
+    
+    func resetRootViewModel(viewModel: ViewModel) {
+        resetRootSignalPipe.1.sendNext(ViewModelNavigationParams(viewModel: viewModel))
+    }
     
 }
