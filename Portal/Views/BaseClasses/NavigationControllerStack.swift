@@ -19,6 +19,9 @@ class NavigationControllerStack: NSObject {
         return navigationControllers.last
     }
     
+    let viewModelViewMap = [NSClassFromString()]
+    
+    
     //MARK: pubilc func
     
     init(services: ViewModelServicesProtocal) {
