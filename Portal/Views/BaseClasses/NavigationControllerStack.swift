@@ -19,7 +19,7 @@ class NavigationControllerStack: NSObject {
         return navigationControllers.last
     }
     
-    let viewModelViewMap = [NSClassFromString()]
+//    let viewModelViewMap = [NSClassFromString()]
     
     
     //MARK: pubilc func
