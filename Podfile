@@ -12,15 +12,20 @@ target 'Portal' do
   pod 'GCDWebServer/WebDAV', '~> 3.3.2'
   pod 'Masonry', '~> 1.0.1'
   pod 'ReactiveCocoa', '~> 4.2.1'
+  
+  def pods_for_testing
+    pod 'Quick', '~> 0.9.2'
+    pod 'Nimble', '~> 4.1.0'
+  end
 
   target 'PortalTests' do
     inherit! :search_paths
-    # Pods for testing
+    pods_for_testing
   end
 
   target 'PortalUITests' do
     inherit! :search_paths
-    # Pods for testing
+    pods_for_testing
   end
 
 end
