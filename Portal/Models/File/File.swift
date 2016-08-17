@@ -12,10 +12,10 @@ class File: NSObject {
     
     let type: FileType
     let path: NSURL
-    var size: UInt64?
     let displayName: String
+    let size: UInt64?
     let fileExtension: String?
-    let attributes: NSDictionary?
+    let attributes: [String : AnyObject]?
     
     var subpaths: [String]? {
         get {
@@ -32,22 +32,20 @@ class File: NSObject {
         }
     }
     
-    init(path: NSURL) {
-        if checkDirectory(path) {
+    init?(filePath: NSURL) {
+        attributes = getFileAttribute(filePath)
+        displayName = path.lastPathComponent!
+        path = filePath
+        if attributes == nil {
+            return nil
+        }
+        if let fileType = (attributes?[NSFileType] as? String) where fileType == NSFileTypeDirectory {
             type = FileType.Directory
             fileExtension = nil
-            attributes = nil
             size = nil
         }
         else {
-            if let attr = getFileAttribute(path) {
-                size = attr.fileSize()
-                attributes = attr
-            }
-            else {
-                size = nil
-                attributes = nil
-            }
+            
             if let fileExtension = path.pathExtension {
                 type = FileType(rawValue: fileExtension) ?? .Unknown
                 self.fileExtension = fileExtension
@@ -57,17 +55,14 @@ class File: NSObject {
                 self.fileExtension = nil
             }
         }
-        displayName = path.lastPathComponent!
-        self.path = path
     }
 }
 
 func checkDirectory(filePath: NSURL) -> Bool {
     var isDirectory = false
     do {
-        var resourceValue: AnyObject?
-        try filePath.getResourceValue(&resourceValue, forKey: NSURLIsDirectoryKey)
-        if let number = resourceValue as? NSNumber where number == true {
+        var resourceValue = try NSFileManager.defaultManager().attributesOfItemAtPath(filePath.absoluteString)
+        if let fileType = resourceValue[NSFileType] as? String where fileType == NSFileTypeDirectory {
             isDirectory = true
         }
     }
@@ -75,12 +70,12 @@ func checkDirectory(filePath: NSURL) -> Bool {
     return isDirectory
 }
 
-func getFileAttribute(filePath: NSURL) -> NSDictionary? {
+func getFileAttribute(filePath: NSURL) -> [String : AnyObject]? {
     guard let path = filePath.path else {
         return nil
     }
     do {
-        let attribute = try NSFileManager.defaultManager().attributesOfItemAtPath(path) as NSDictionary
+        let attribute = try NSFileManager.defaultManager().attributesOfItemAtPath(path)
         return attribute
     }
     catch {}

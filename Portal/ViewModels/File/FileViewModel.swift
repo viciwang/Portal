@@ -30,8 +30,8 @@ class FileViewModel: ViewModel {
             if let file = self.file where file.type == .Directory {
                 var files = [File]()
                 for subPath in file.subpaths! {
-                    let url = NSURL(fileURLWithPath: subPath)
-                    files.insert(File(path: url), atIndex: 0)
+                    let url = NSURL(string : subPath)
+                    files.insert(File(path: url!), atIndex: 0)
                 }
                 return files
             }

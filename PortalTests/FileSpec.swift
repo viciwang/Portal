@@ -8,7 +8,6 @@
 
 import Quick
 import Nimble
-import Foundation
 
 class FileSpec: QuickSpec {
     
@@ -21,8 +20,8 @@ class FileSpec: QuickSpec {
             context("when init with a correct path") {
                 
                 context("and the path is a directory,") {
-                    let pathUrl = NSURL(string:NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, false).first!)
-                    fileViewModel = FileViewModel(services: ViewModelServices(), params: [FileViewModel.ParamsKeyPath : ""])
+                    let pathUrl = NSURL(string:NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true).first!)
+                    fileViewModel = FileViewModel(services: ViewModelServices(), params: [FileViewModel.ParamsKeyPath : pathUrl!])
                     let file = fileViewModel?.file
                     it("the file property should be a directory.", closure: {
                         expect(file) != nil
@@ -40,7 +39,7 @@ class FileSpec: QuickSpec {
                 
                 context("and the path is a file") {
                     
-                    let pathUrl = NSURL(string:NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, false).first!)
+                    let pathUrl = NSURL(string:NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true).first!)
                     fileViewModel = FileViewModel(services: ViewModelServices(), params: [FileViewModel.ParamsKeyPath : pathUrl!])
                     let file = fileViewModel?.file
                     it("the file property should be a file.", closure: {
