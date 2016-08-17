@@ -13,7 +13,7 @@ class ViewModel: NSObject {
     let services: ViewModelServicesProtocal
     let params: [String : AnyObject]?
     
-    init(services: ViewModelServicesProtocal, params: [String : AnyObject]?) {
+    init?(services: ViewModelServicesProtocal, params: [String : AnyObject]?) {
         self.services = services
         self.params = params;
     }

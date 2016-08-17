@@ -20,6 +20,7 @@
 		9FAB0FF31D4FA70F0017B881 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAB0FF21D4FA70F0017B881 /* NavigationController.swift */; };
 		9FAB0FF51D4FA9AB0017B881 /* ViewModelServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAB0FF41D4FA9AB0017B881 /* ViewModelServices.swift */; };
 		9FAB0FF71D4FAA0D0017B881 /* NavigationProtocal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAB0FF61D4FAA0D0017B881 /* NavigationProtocal.swift */; };
+		9FB8FF1F1D6360A10015C945 /* FileSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB8FF1E1D6360A10015C945 /* FileSpec.swift */; };
 		FA5C55551D61ED5B003DDDC3 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAB0FE91D4FA14B0017B881 /* ViewModel.swift */; };
 		FA5C55561D61ED6B003DDDC3 /* ViewModelServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAB0FF41D4FA9AB0017B881 /* ViewModelServices.swift */; };
 		FA5C55571D61ED8B003DDDC3 /* NavigationProtocal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAB0FF61D4FAA0D0017B881 /* NavigationProtocal.swift */; };
@@ -67,6 +68,7 @@
 		9FAB0FF21D4FA70F0017B881 /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NavigationController.swift; path = Views/BaseClasses/NavigationController.swift; sourceTree = "<group>"; };
 		9FAB0FF41D4FA9AB0017B881 /* ViewModelServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewModelServices.swift; path = ViewModels/BaseClasses/ViewModelServices.swift; sourceTree = "<group>"; };
 		9FAB0FF61D4FAA0D0017B881 /* NavigationProtocal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NavigationProtocal.swift; path = ViewModels/BaseClasses/NavigationProtocal.swift; sourceTree = "<group>"; };
+		9FB8FF1E1D6360A10015C945 /* FileSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileSpec.swift; sourceTree = "<group>"; };
 		AF53E2C866840CDCEAE55F4B /* Pods-PortalUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PortalUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PortalUITests/Pods-PortalUITests.release.xcconfig"; sourceTree = "<group>"; };
 		DE45ED37E4A9B418C74DDAF0 /* Pods-PortalTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PortalTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PortalTests/Pods-PortalTests.release.xcconfig"; sourceTree = "<group>"; };
 		E32A3E4D2B3256D3F06F23AB /* Pods_PortalUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PortalUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -166,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				9F45E1921D388ABA003DECDF /* Info.plist */,
+				9FB8FF1E1D6360A10015C945 /* FileSpec.swift */,
 			);
 			path = PortalTests;
 			sourceTree = "<group>";
@@ -555,6 +558,7 @@
 				FA5C555B1D62D026003DDDC3 /* File.swift in Sources */,
 				FABC684E1D5B4E200063211E /* FileViewModel.swift in Sources */,
 				FA5C55551D61ED5B003DDDC3 /* ViewModel.swift in Sources */,
+				9FB8FF1F1D6360A10015C945 /* FileSpec.swift in Sources */,
 				FA5C55561D61ED6B003DDDC3 /* ViewModelServices.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -615,6 +619,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -660,6 +665,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;

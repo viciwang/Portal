@@ -10,7 +10,7 @@ import UIKit
 
 class File: NSObject {
     
-    let type: FileType?
+    let type: FileType
     let path: NSURL
     var size: UInt64?
     let displayName: String

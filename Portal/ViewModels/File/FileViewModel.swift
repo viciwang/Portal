@@ -41,8 +41,13 @@ class FileViewModel: ViewModel {
         }
     }
     
-    override init(services: ViewModelServicesProtocal, params: [String : AnyObject]?) {
-        path = params?[FileViewModel.ParamsKeyPath] as? NSURL
+    override init?(services: ViewModelServicesProtocal, params: [String : AnyObject]?) {
+        if let params = params, url = params[FileViewModel.ParamsKeyPath] as? NSURL {
+            path = url
+        }
+        else {
+            return nil
+        }
         super.init(services: services, params: params)
     }
     
