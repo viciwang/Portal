@@ -17,7 +17,7 @@ class FileViewModel: ViewModel {
     var file: File? {
         get {
             if let path = path {
-                return File(path: path)
+                return File(filePath: path)
             }
             else {
                 return nil
@@ -31,7 +31,9 @@ class FileViewModel: ViewModel {
                 var files = [File]()
                 for subPath in file.subpaths! {
                     let url = NSURL(string : subPath)
-                    files.insert(File(path: url!), atIndex: 0)
+                    if let subFile = File(filePath: url!) {
+                        files.insert(subFile, atIndex: 0)
+                    }
                 }
                 return files
             }

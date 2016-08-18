@@ -14,6 +14,7 @@ class File: NSObject {
     let path: NSURL
     let displayName: String
     let size: UInt64?
+    let displaySize: NSString?
     let fileExtension: String?
     let attributes: [String : AnyObject]?
     
@@ -34,7 +35,7 @@ class File: NSObject {
     
     init?(filePath: NSURL) {
         attributes = getFileAttribute(filePath)
-        displayName = path.lastPathComponent!
+        displayName = filePath.lastPathComponent!
         path = filePath
         if attributes == nil {
             return nil
@@ -43,9 +44,9 @@ class File: NSObject {
             type = FileType.Directory
             fileExtension = nil
             size = nil
+            displaySize = nil
         }
         else {
-            
             if let fileExtension = path.pathExtension {
                 type = FileType(rawValue: fileExtension) ?? .Unknown
                 self.fileExtension = fileExtension
@@ -54,6 +55,8 @@ class File: NSObject {
                 type = .Unknown
                 self.fileExtension = nil
             }
+            size = (attributes![NSFileSize] as? NSNumber)?.unsignedLongLongValue
+            displaySize = stringFromByte(size!)
         }
     }
 }
@@ -80,6 +83,17 @@ func getFileAttribute(filePath: NSURL) -> [String : AnyObject]? {
     }
     catch {}
     return nil
+}
+
+func stringFromByte(byte: UInt64) -> String {
+    switch byte {
+    case 0...1024:
+        return String("\(byte) byte")
+    case 1024...1048575:
+        return NSString(format: "%.2f Kb",Double(byte)/1024.0) as String
+    default:
+        return NSString(format: "%.2f Mb",Double(byte)/1048576.0) as String
+    }
 }
 
 enum FileType:String {
