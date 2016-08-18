@@ -10,7 +10,7 @@ import UIKit
 import ReactiveCocoa
 import Result
 
-public struct ViewModelNavigationParams {
+public class ViewModelNavigationParams {
     var viewModel: ViewModel?
     var animated = true
     var completion: (() -> Void)?

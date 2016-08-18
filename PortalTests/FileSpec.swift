@@ -23,6 +23,7 @@ class FileSpec: QuickSpec {
                     let pathUrl = NSURL(string:NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true).first!)
                     fileViewModel = FileViewModel(services: ViewModelServices(), params: [FileViewModel.ParamsKeyPath : pathUrl!])
                     let file = fileViewModel?.file
+                    print(fileViewModel?.file)
                     it("the file property should be a directory.", closure: {
                         expect(file) != nil
                         if let file = file {
@@ -55,8 +56,20 @@ class FileSpec: QuickSpec {
                             expect(file.subpaths).to(beNil())
                         }
                     })
-                    
                 }
+            }
+            
+            context("when init with a wrong path") {
+                
+                var pathURL = NSURL(string:NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true).first!)!
+                pathURL = pathURL.URLByAppendingPathComponent("phot.png")
+                fileViewModel = FileViewModel(services: ViewModelServices(), params: [FileViewModel.ParamsKeyPath : pathURL])
+                let file = fileViewModel?.file
+                it("the file property should be nil.", closure: {
+                    expect(file).to(beNil())
+                    expect(fileViewModel?.subFiles).to(beNil())
+                    expect(fileViewModel?.pathURL).to(equal(pathURL))
+                })
             }
         }
     }

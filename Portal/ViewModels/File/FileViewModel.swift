@@ -12,21 +12,14 @@ class FileViewModel: ViewModel {
     
     static let ParamsKeyPath = "ParamsKeyPath"
     
-    let path: NSURL?
+    let pathURL: NSURL?
+    var file: File?
+    let subFiles: [File]?
     
-    var file: File? {
-        get {
-            if let path = path {
-                return File(filePath: path)
-            }
-            else {
-                return nil
-            }
-        }
-    }
-    
-    var subFiles: [File]? {
-        get {
+    override init?(services: ViewModelServicesProtocal, params: [String : AnyObject]?) {
+        if let params = params, url = params[FileViewModel.ParamsKeyPath] as? NSURL {
+            pathURL = url
+            file = File(filePath: pathURL!)
             if let file = self.file where file.type == .Directory {
                 var files = [File]()
                 for subPath in file.subpaths! {
@@ -35,17 +28,11 @@ class FileViewModel: ViewModel {
                         files.insert(subFile, atIndex: 0)
                     }
                 }
-                return files
+                subFiles = files
             }
             else {
-                return nil
+                subFiles = nil
             }
-        }
-    }
-    
-    override init?(services: ViewModelServicesProtocal, params: [String : AnyObject]?) {
-        if let params = params, url = params[FileViewModel.ParamsKeyPath] as? NSURL {
-            path = url
         }
         else {
             return nil
@@ -54,6 +41,14 @@ class FileViewModel: ViewModel {
     }
     
     func selectFileAtIndex(index: Int) {
-        
+        guard let subFiles = subFiles else {
+            return
+        }
+        guard index > 0 && index < subFiles.count else {
+            return
+        }
+        if let viewModel = FileViewModel(services: services, params: [FileViewModel.ParamsKeyPath : subFiles[index].path]) {
+            services.pushViewModel(viewModel, animated: true)
+        }
     }
 }
