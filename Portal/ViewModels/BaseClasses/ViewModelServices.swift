@@ -37,7 +37,7 @@ protocol ViewModelServicesProtocal: NavigationProtocal {
     
     var dismissViewModelSignal: NavigationSignal {get}
     
-    var resetRootViewModel: NavigationSignal {get}
+    var resetRootViewModelSignal: NavigationSignal {get}
     
 }
 
@@ -72,7 +72,7 @@ class ViewModelServices: NSObject, ViewModelServicesProtocal {
         return dismissSignalPipe.0
     }
     
-    var resetRootViewModel: NavigationSignal {
+    var resetRootViewModelSignal: NavigationSignal {
         return resetRootSignalPipe.0
     }
     

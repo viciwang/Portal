@@ -8,6 +8,11 @@
 
 import UIKit
 
+func documentURL() -> NSURL {
+    let path = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, false).first!
+    return NSURL(string: path)!
+}
+
 class FileViewModel: ViewModel {
     
     static let ParamsKeyPath = "ParamsKeyPath"

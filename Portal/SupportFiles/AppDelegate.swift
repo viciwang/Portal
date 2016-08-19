@@ -12,9 +12,20 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var viewModelServices: ViewModelServices?
+    var navigationControllerStack: NavigationControllerStack?
+    var rootViewModel: ViewModel?
     
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        
+        viewModelServices = ViewModelServices()
+        navigationControllerStack = NavigationControllerStack(services: viewModelServices!)
+        rootViewModel = FileViewModel(services: viewModelServices!, params: [FileViewModel.ParamsKeyPath : documentURL()])
+        
+
+        viewModelServices?.resetRootViewModel(rootViewModel!)
+        
         return true
     }
 }
