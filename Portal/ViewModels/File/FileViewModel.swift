@@ -8,8 +8,8 @@
 
 import UIKit
 
-func documentURL() -> NSURL {
-    let path = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, false).first!
+func documentsURL() -> NSURL {
+    let path = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true).first!
     return NSURL(string: path)!
 }
 
@@ -28,8 +28,7 @@ class FileViewModel: ViewModel {
             if let file = self.file where file.type == .Directory {
                 var files = [File]()
                 for subPath in file.subpaths! {
-                    let url = NSURL(string : subPath)
-                    if let subFile = File(filePath: url!) {
+                    if let subFile = File(filePath: subPath) {
                         files.insert(subFile, atIndex: 0)
                     }
                 }

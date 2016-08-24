@@ -14,16 +14,16 @@ class File: NSObject {
     let path: NSURL
     let displayName: String
     let size: UInt64?
-    let displaySize: NSString?
+    let displaySize: String?
     let fileExtension: String?
     let attributes: [String : AnyObject]?
     
-    var subpaths: [String]? {
+    var subpaths: [NSURL]? {
         get {
             if type == .Directory {
-                var paths = [String]()
+                var paths = [NSURL]()
                 for p in NSFileManager.defaultManager().subpathsAtPath(path.absoluteString)!{
-                    paths.insert(p, atIndex: 0);
+                    paths.insert(path.URLByAppendingPathComponent(p), atIndex: 0);
                 }
                 return paths
             }

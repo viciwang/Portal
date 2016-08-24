@@ -21,10 +21,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         viewModelServices = ViewModelServices()
         navigationControllerStack = NavigationControllerStack(services: viewModelServices!)
-        rootViewModel = FileViewModel(services: viewModelServices!, params: [FileViewModel.ParamsKeyPath : documentURL()])
+        rootViewModel = FileViewModel(services: viewModelServices!, params: [FileViewModel.ParamsKeyPath : documentsURL()])
         
-
+        window = UIWindow(frame: UIScreen.mainScreen().bounds)
         viewModelServices?.resetRootViewModel(rootViewModel!)
+        window?.makeKeyAndVisible()
         
         return true
     }

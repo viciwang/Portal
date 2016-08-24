@@ -10,7 +10,7 @@ target 'Portal' do
   pod 'GCDWebServer', '~> 3.3.2'
   pod 'GCDWebServer/WebUploader', '~> 3.3.2'
   pod 'GCDWebServer/WebDAV', '~> 3.3.2'
-  pod 'Masonry', '~> 1.0.1'
+  pod 'SnapKit', '~> 0.30.0.beta2'
   pod 'ReactiveCocoa', '~> 4.2.1'
   
   def pods_for_testing

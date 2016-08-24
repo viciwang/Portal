@@ -57,33 +57,38 @@ class NavigationControllerStack: NSObject {
     //MARK: private func
     
     private func registerNavigationHooks() {
-        self.services.pushViewModelSignal.observeNext { (navigatinParams) in
-            guard let viewModel = navigatinParams.viewModel else {
-                assert(false, "Can't not push a viewController with a nil viewModel")
-                return
+        
+        self.services.pushViewModelSignal.observeNext { [unowned self] (navigatinParams) in
+            if let viewController = Router.viewControllerForViewModel(navigatinParams.viewModel) {
+                self.topNavigationController?.pushViewController(viewController as! ViewController, animated: navigatinParams.animated)
             }
-            guard let viewControllerName = self.viewModelViewMap[classAsString(viewModel.dynamicType)] else {
-                assert(false, "Can't not find a viewController string map to the viewModel : \(viewModel.dynamicType)")
-                return
-            }
-            guard let viewController = stringAsClass(viewControllerName) as? ViewController.Type else {
-                assert(false, "Can't not instance a viewController from string : \(viewModel.dynamicType)")
-                return
-            }
-            self.topNavigationController?.pushViewController(viewController.init(viewModel:viewModel), animated: navigatinParams.animated)
         }
         
-        self.services.popViewModelSignal.observeNext { (navigationParams) in
+        self.services.popViewModelSignal.observeNext { [unowned self] (navigationParams) in
             if let topNavigationController = self.topNavigationController {
                 if topNavigationController.viewControllers.count == 1 {
                     topNavigationController.dismissViewControllerAnimated(true, completion: {
-//                        unowned self
                         self.popNavigationController()
                     })
                 }
                 else {
                     topNavigationController.popViewControllerAnimated(navigationParams.animated)
                 }
+            }
+        }
+        
+        self.services.resetRootViewModelSignal.observeNext { [unowned self] (navigationParams) in
+            self.navigationControllers.removeAll()
+            var viewController: UIViewController!
+            if let vc = Router.viewControllerForViewModel(navigationParams.viewModel) {
+                if !(vc is UINavigationController) && !(vc is UITabBarController) {
+                    viewController = NavigationController(rootViewController: vc)
+                    self.pushNavigationController(viewController as! NavigationController)
+                }
+                else {
+                    viewController = vc
+                }
+                Global.sharedAppWindow.rootViewController = viewController
             }
         }
     }
