@@ -69,6 +69,7 @@ class FileViewController: ViewController, UITableViewDelegate, UITableViewDataSo
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath)
+        cell.selectionStyle = .None
         if let file = viewModel.subFiles?[indexPath.row]  {
             cell.textLabel?.text = file.displayName
             cell.detailTextLabel?.text = file.displaySize
