@@ -51,6 +51,11 @@ class FileViewController: ViewController, UITableViewDelegate, UITableViewDataSo
         self.view.addSubview(tableView)
         tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: cellIdentifier)
         self.tableView.setNeedsUpdateConstraints()
+        let curveView = CurveView()
+        self.view.addSubview(curveView)
+        curveView.snp_remakeConstraints { [unowned self] (make) in
+            make.edges.equalTo(self.view)
+        }
     }
     
     //MARK: tableView delegate and dataSource
