@@ -8,6 +8,7 @@
 
 import UIKit
 import ReactiveCocoa
+import ReactiveSwift
 import Result
 
 public class ViewModelNavigationParams {
@@ -86,27 +87,27 @@ class ViewModelServices: NSObject, ViewModelServicesProtocal {
     }
     
     func pushViewModel(viewModel: ViewModel, animated: Bool) {
-        pushSignalPipe.1.sendNext(ViewModelNavigationParams(viewModel: viewModel, animated: animated))
+        pushSignalPipe.1.send(value: ViewModelNavigationParams(viewModel: viewModel, animated: animated))
     }
     
     func popViewModelAnimated(animated: Bool) {
-        popSignalPipe.1.sendNext(ViewModelNavigationParams(viewModel: nil, animated: animated))
+        popSignalPipe.1.send(value: ViewModelNavigationParams(viewModel: nil, animated: animated))
     }
     
     func popToRootViewModelAnimated(animated: Bool) {
-        popToRootSignalPipe.1.sendNext(ViewModelNavigationParams(viewModel: nil, animated: animated))
+        popToRootSignalPipe.1.send(value: ViewModelNavigationParams(viewModel: nil, animated: animated))
     }
     
     func presentViewModel(viewModel: ViewModel, animated: Bool, completion: (() -> Void)?) {
-        presentSignalPipe.1.sendNext(ViewModelNavigationParams(viewModel: viewModel, animated: animated, completion: completion))
+        presentSignalPipe.1.send(value: ViewModelNavigationParams(viewModel: viewModel, animated: animated, completion: completion))
     }
     
     func dismissViewModelAnimated(animated: Bool, completion: (() -> Void)?) {
-        dismissSignalPipe.1.sendNext(ViewModelNavigationParams(viewModel: nil, animated: animated, completion: completion))
+        dismissSignalPipe.1.send(value: ViewModelNavigationParams(viewModel: nil, animated: animated, completion: completion))
     }
     
     func resetRootViewModel(viewModel: ViewModel) {
-        resetRootSignalPipe.1.sendNext(ViewModelNavigationParams(viewModel: viewModel))
+        resetRootSignalPipe.1.send(value: ViewModelNavigationParams(viewModel: viewModel))
     }
     
 }

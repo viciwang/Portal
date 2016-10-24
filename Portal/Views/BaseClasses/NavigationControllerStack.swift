@@ -50,6 +50,7 @@ class NavigationControllerStack: NSObject {
         navigationControllers.append(navigationController)
     }
     
+    @discardableResult
     func popNavigationController() -> UINavigationController? {
         return navigationControllers.popLast()
     }
@@ -58,32 +59,32 @@ class NavigationControllerStack: NSObject {
     
     private func registerNavigationHooks() {
         
-        self.services.pushViewModelSignal.observeNext { [unowned self] (navigatinParams) in
-            if let viewController = Router.viewControllerForViewModel(navigatinParams.viewModel) {
+        self.services.pushViewModelSignal.observeValues { [unowned self] (navigatinParams) in
+            if let viewController = Router.viewControllerForViewModel(viewModel: navigatinParams.viewModel) {
                 self.topNavigationController?.pushViewController(viewController as! ViewController, animated: navigatinParams.animated)
             }
         }
         
-        self.services.popViewModelSignal.observeNext { [unowned self] (navigationParams) in
+        self.services.popViewModelSignal.observeValues { [unowned self] (navigationParams) in
             if let topNavigationController = self.topNavigationController {
                 if topNavigationController.viewControllers.count == 1 {
-                    topNavigationController.dismissViewControllerAnimated(true, completion: {
+                    topNavigationController.dismiss(animated: true, completion: {
                         self.popNavigationController()
                     })
                 }
                 else {
-                    topNavigationController.popViewControllerAnimated(navigationParams.animated)
+                    topNavigationController.popViewController(animated: navigationParams.animated)
                 }
             }
         }
         
-        self.services.resetRootViewModelSignal.observeNext { [unowned self] (navigationParams) in
+        self.services.resetRootViewModelSignal.observeValues { [unowned self] (navigationParams) in
             self.navigationControllers.removeAll()
             var viewController: UIViewController!
-            if let vc = Router.viewControllerForViewModel(navigationParams.viewModel) {
+            if let vc = Router.viewControllerForViewModel(viewModel: navigationParams.viewModel) {
                 if !(vc is UINavigationController) && !(vc is UITabBarController) {
                     viewController = NavigationController(rootViewController: vc)
-                    self.pushNavigationController(viewController as! NavigationController)
+                    self.pushNavigationController(navigationController: viewController as! NavigationController)
                 }
                 else {
                     viewController = vc

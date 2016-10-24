@@ -10,5 +10,5 @@ import Foundation
 import UIKit
 
 class Global {
-    static let sharedAppWindow: UIWindow = ((UIApplication.sharedApplication().delegate?.window)!)!
+    static let sharedAppWindow: UIWindow = ((UIApplication.shared.delegate?.window)!)!
 }
