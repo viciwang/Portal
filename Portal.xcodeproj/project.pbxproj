@@ -37,6 +37,7 @@
 		9FB8FF1F1D6360A10015C945 /* FileSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB8FF1E1D6360A10015C945 /* FileSpec.swift */; };
 		FA08DB681DBDD1A00015868D /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA08DB671DBDD1A00015868D /* HomeViewModel.swift */; };
 		FA08DB6A1DBDDBB90015868D /* ChartsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA08DB691DBDDBB90015868D /* ChartsViewModel.swift */; };
+		FA5144071DBF83C2002A1D13 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5144061DBF83C2002A1D13 /* Data.swift */; };
 		FA5C55551D61ED5B003DDDC3 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAB0FE91D4FA14B0017B881 /* ViewModel.swift */; };
 		FA5C55561D61ED6B003DDDC3 /* ViewModelServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAB0FF41D4FA9AB0017B881 /* ViewModelServices.swift */; };
 		FA5C55571D61ED8B003DDDC3 /* NavigationProtocal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAB0FF61D4FAA0D0017B881 /* NavigationProtocal.swift */; };
@@ -89,6 +90,7 @@
 		E32A3E4D2B3256D3F06F23AB /* Pods_PortalUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PortalUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA08DB671DBDD1A00015868D /* HomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewModel.swift; path = ViewModels/Charts/HomeViewModel.swift; sourceTree = "<group>"; };
 		FA08DB691DBDDBB90015868D /* ChartsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChartsViewModel.swift; path = ViewModels/Charts/ChartsViewModel.swift; sourceTree = "<group>"; };
+		FA5144061DBF83C2002A1D13 /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Data.swift; path = Models/Data.swift; sourceTree = "<group>"; };
 		FADE6C571DBF6A16009FB978 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		FB6AD0E80970FB16CE315E41 /* Pods_PortalTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PortalTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF5A5D27754F4D34CA6A6C3A /* Pods_Portal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Portal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -264,6 +266,7 @@
 		9FAB0FEC1D4FA18A0017B881 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				FA5144061DBF83C2002A1D13 /* Data.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -585,6 +588,7 @@
 				9FAB0FF11D4FA2710017B881 /* ViewController.swift in Sources */,
 				9FAB0FF31D4FA70F0017B881 /* NavigationController.swift in Sources */,
 				9FAB0FF71D4FAA0D0017B881 /* NavigationProtocal.swift in Sources */,
+				FA5144071DBF83C2002A1D13 /* Data.swift in Sources */,
 				9F8C1C5B1D6D4940006DEA03 /* Global.swift in Sources */,
 				9FAB0FEA1D4FA14B0017B881 /* ViewModel.swift in Sources */,
 				9F55B6391D4CFB0100F1C573 /* AppDelegate.swift in Sources */,
