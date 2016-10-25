@@ -31,7 +31,7 @@ class NavigationControllerStack: NSObject {
         return navigationControllers.last
     }
     
-    let viewModelViewMap = ["FileViewModel" : "FileViewController"]
+    let viewModelViewMap = ["HomeViewModel" : "HomeViewController"]
     
     
     //MARK: pubilc func

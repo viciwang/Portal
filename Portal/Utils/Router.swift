@@ -10,7 +10,7 @@ import UIKit
 
 class Router: NSObject {
     
-    private static let viewModelViewMap: [String : String] = [:]
+    private static let viewModelViewMap: [String : String] = [classAsString(cls: HomeViewModel.classForCoder()) : classAsString(cls: HomeViewController.classForCoder())]
     
     class func viewControllerForViewModel(viewModel: ViewModel?) -> UIViewController? {
         guard let viewModel = viewModel else {

@@ -40,6 +40,7 @@
 		FA5C55551D61ED5B003DDDC3 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAB0FE91D4FA14B0017B881 /* ViewModel.swift */; };
 		FA5C55561D61ED6B003DDDC3 /* ViewModelServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAB0FF41D4FA9AB0017B881 /* ViewModelServices.swift */; };
 		FA5C55571D61ED8B003DDDC3 /* NavigationProtocal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAB0FF61D4FAA0D0017B881 /* NavigationProtocal.swift */; };
+		FADE6C581DBF6A16009FB978 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADE6C571DBF6A16009FB978 /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +89,7 @@
 		E32A3E4D2B3256D3F06F23AB /* Pods_PortalUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PortalUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA08DB671DBDD1A00015868D /* HomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewModel.swift; path = ViewModels/Charts/HomeViewModel.swift; sourceTree = "<group>"; };
 		FA08DB691DBDDBB90015868D /* ChartsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChartsViewModel.swift; path = ViewModels/Charts/ChartsViewModel.swift; sourceTree = "<group>"; };
+		FADE6C571DBF6A16009FB978 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		FB6AD0E80970FB16CE315E41 /* Pods_PortalTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PortalTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF5A5D27754F4D34CA6A6C3A /* Pods_Portal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Portal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -218,6 +220,7 @@
 		9F55B63C1D4CFB2200F1C573 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				FADE6C561DBF69FD009FB978 /* Charts */,
 			);
 			name = Modules;
 			sourceTree = "<group>";
@@ -282,6 +285,15 @@
 				FA08DB691DBDDBB90015868D /* ChartsViewModel.swift */,
 			);
 			name = Charts;
+			sourceTree = "<group>";
+		};
+		FADE6C561DBF69FD009FB978 /* Charts */ = {
+			isa = PBXGroup;
+			children = (
+				FADE6C571DBF6A16009FB978 /* HomeViewController.swift */,
+			);
+			name = Charts;
+			path = Modules/Charts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -576,6 +588,7 @@
 				9F8C1C5B1D6D4940006DEA03 /* Global.swift in Sources */,
 				9FAB0FEA1D4FA14B0017B881 /* ViewModel.swift in Sources */,
 				9F55B6391D4CFB0100F1C573 /* AppDelegate.swift in Sources */,
+				FADE6C581DBF6A16009FB978 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -731,7 +744,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 20266D7A7536289448EB66B8 /* Pods-Portal.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -748,7 +761,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3CC038D04356E4D91E56DA78 /* Pods-Portal.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -765,7 +778,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 999882C20DCE9EF77391160C /* Pods-PortalTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = PortalTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -780,7 +793,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DE45ED37E4A9B418C74DDAF0 /* Pods-PortalTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = PortalTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -795,7 +808,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0210F3EE1537CC96B4712535 /* Pods-PortalUITests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = PortalUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.allen.PortalUITests;
@@ -809,7 +822,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = AF53E2C866840CDCEAE55F4B /* Pods-PortalUITests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = PortalUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.allen.PortalUITests;
