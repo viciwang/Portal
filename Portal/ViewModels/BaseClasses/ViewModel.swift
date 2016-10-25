@@ -9,12 +9,48 @@
 import UIKit
 
 class ViewModel: NSObject {
-    
-    let services: ViewModelServicesProtocal
-    let params: [String : AnyObject]?
-    
-    init?(services: ViewModelServicesProtocal, params: [String : AnyObject]?) {
-        self.services = services
-        self.params = params;
+    fileprivate(set) var services: ViewModelServicesProtocal? = nil
+}
+
+protocol ViewModelProtocal {
+    init?(params: [String : Any])
+}
+
+extension ViewModelProtocal {
+    init?(services: ViewModelServicesProtocal, params: [String : Any]) {
+        if let obj: Self = ParameterBuilder.build(params: params) {
+            if let viewModel = obj as? ViewModel {
+                viewModel.services = services
+            }
+            self = obj
+        }
+        else {
+            return nil
+        }
     }
 }
+
+private class ParameterBuilder <T: ViewModelProtocal> {
+    
+    class func build(params: [String : Any]) -> T? {
+        return T.init(params: params)
+    }
+}
+
+infix operator <-
+
+public func <- <T>(left: inout T, right: Any?) {
+    if let rightObject = right as? T {
+        left = rightObject
+    }
+}
+
+public func <- <T>(left: inout T?, right: Any?) {
+    if let rightObject = right as? T {
+        left = rightObject
+    }
+    else {
+        left = nil
+    }
+}
+

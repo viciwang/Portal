@@ -35,6 +35,8 @@
 		9FAB0FF51D4FA9AB0017B881 /* ViewModelServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAB0FF41D4FA9AB0017B881 /* ViewModelServices.swift */; };
 		9FAB0FF71D4FAA0D0017B881 /* NavigationProtocal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAB0FF61D4FAA0D0017B881 /* NavigationProtocal.swift */; };
 		9FB8FF1F1D6360A10015C945 /* FileSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB8FF1E1D6360A10015C945 /* FileSpec.swift */; };
+		FA08DB681DBDD1A00015868D /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA08DB671DBDD1A00015868D /* HomeViewModel.swift */; };
+		FA08DB6A1DBDDBB90015868D /* ChartsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA08DB691DBDDBB90015868D /* ChartsViewModel.swift */; };
 		FA5C55551D61ED5B003DDDC3 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAB0FE91D4FA14B0017B881 /* ViewModel.swift */; };
 		FA5C55561D61ED6B003DDDC3 /* ViewModelServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAB0FF41D4FA9AB0017B881 /* ViewModelServices.swift */; };
 		FA5C55571D61ED8B003DDDC3 /* NavigationProtocal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAB0FF61D4FAA0D0017B881 /* NavigationProtocal.swift */; };
@@ -84,6 +86,8 @@
 		AF53E2C866840CDCEAE55F4B /* Pods-PortalUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PortalUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PortalUITests/Pods-PortalUITests.release.xcconfig"; sourceTree = "<group>"; };
 		DE45ED37E4A9B418C74DDAF0 /* Pods-PortalTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PortalTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PortalTests/Pods-PortalTests.release.xcconfig"; sourceTree = "<group>"; };
 		E32A3E4D2B3256D3F06F23AB /* Pods_PortalUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PortalUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA08DB671DBDD1A00015868D /* HomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewModel.swift; path = ViewModels/Charts/HomeViewModel.swift; sourceTree = "<group>"; };
+		FA08DB691DBDDBB90015868D /* ChartsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChartsViewModel.swift; path = ViewModels/Charts/ChartsViewModel.swift; sourceTree = "<group>"; };
 		FB6AD0E80970FB16CE315E41 /* Pods_PortalTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PortalTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF5A5D27754F4D34CA6A6C3A /* Pods_Portal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Portal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -230,6 +234,7 @@
 		9FAB0FE01D4FA0520017B881 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				FA08DB661DBDD0F20015868D /* Charts */,
 				9FAB0FE11D4FA0770017B881 /* BaseClasses */,
 			);
 			name = ViewModels;
@@ -268,6 +273,15 @@
 				9FAB0FF21D4FA70F0017B881 /* NavigationController.swift */,
 			);
 			name = BaseClasses;
+			sourceTree = "<group>";
+		};
+		FA08DB661DBDD0F20015868D /* Charts */ = {
+			isa = PBXGroup;
+			children = (
+				FA08DB671DBDD1A00015868D /* HomeViewModel.swift */,
+				FA08DB691DBDDBB90015868D /* ChartsViewModel.swift */,
+			);
+			name = Charts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -554,6 +568,8 @@
 				9F8C1C571D6D3D96006DEA03 /* Router.swift in Sources */,
 				9FAB0FF51D4FA9AB0017B881 /* ViewModelServices.swift in Sources */,
 				9FAB0FEF1D4FA21E0017B881 /* NavigationControllerStack.swift in Sources */,
+				FA08DB681DBDD1A00015868D /* HomeViewModel.swift in Sources */,
+				FA08DB6A1DBDDBB90015868D /* ChartsViewModel.swift in Sources */,
 				9FAB0FF11D4FA2710017B881 /* ViewController.swift in Sources */,
 				9FAB0FF31D4FA70F0017B881 /* NavigationController.swift in Sources */,
 				9FAB0FF71D4FAA0D0017B881 /* NavigationProtocal.swift in Sources */,
